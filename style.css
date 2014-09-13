@@ -1,0 +1,56 @@
+.board {
+	border-collapse: collapse;
+	width: 600px;
+	height: 600px;
+	margin-right: auto;
+	margin-left: auto;
+  margin-top: 20px;
+
+}
+
+td{
+	border: 2px solid rgba(184, 168, 184, 1);
+	width: 200px;
+	height: 200px;
+}
+
+h1{
+	font-family: "basic title font";
+	text-align: center;
+  font-size: 50px;
+}
+
+h2{
+	font-family: "basic title font";
+	text-align: center;
+  font-size: 25px;
+}
+
+.OTurn{
+	font-family: "basic title font";
+	text-align: center;
+  font-size: 25px;
+}
+.XTurn{
+	font-family: "basic title font";
+	text-align: center;
+  font-size: 25px;
+}
+
+
+.o {
+	font-size: 30px;
+	font-family: "basic title font";
+	text-align: center;
+}
+
+p {
+	font-size: 30px;
+	font-family: "basic title font";
+	text-align: center;
+	te
+}
+
+td:hover{
+	background-color: rgba(184, 168, 184, 0.3);
+}
