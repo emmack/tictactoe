@@ -57,6 +57,8 @@ $(document).ready(function(){
         }
       }
   });
+  }
+}
 
     //   console.log('count: ' + count)
     //   console.log('sum: ' + sum)
