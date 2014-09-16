@@ -1,10 +1,14 @@
 $(document).ready(function(){
   // $('.header').hide();
-  // $('.hidden').hide();
+  $('.audio').hide();
 
   $('td').hover();
 
+// $(".audioDemo").bind("load",function(){
+//         $(".alert-success").html("Audio Loaded succesfully");
+//     });
 
+// $(".audioDemo").trigger('load');
 
   // $('form').submit(function() {
   //       var name = $( "input:first" ).val();
@@ -89,14 +93,18 @@ $(document).ready(function(){
         if(rand === undefined){
           console.log("rand is undefined");
           if(($('#2').text()==="X" && $('#7').text()==="X" && $('#6').text()==="X") || ($('#9').text()==="X" && $('#5').text()==="X" && $('#1').text()==="X") ||( $('#4').text()==="X" && $('#3').text()==="X" && $('#8').text()==="X") || ($('#2').text()==="X" && $('#9').text()==="X" && $('#4').text()==="X") || (($('#7').text()==="X" && $('#5').text()==="X" && $('#3').text()==="X") )|| ($('#6').text()==="X" && $('#1').text()==="X" && $('#8').text()==="X") || ($('#2').text()==="X" && $('#5').text()==="X" && $('#8').text()==="X") || ($('#6').text()==="X" && $('#5').text()==="X" && $('#4').text()==="X")){
+            $(".audio").trigger('play');
             alert("X is the winner!")
+            
             return false
           }
           else if(($('#2').text()==="O" && $('#7').text()==="O" && $('#6').text()==="O") || ($('#9').text()==="O" && $('#5').text()==="O" && $('#1').text()==="O") || ($('#4').text()==="O" && $('#3').text()==="O" && $('#8').text()==="O") ||( $('#2').text()==="O" && $('#9').text()==="O" && $('#4').text()==="O") || ($('#7').text()==="O" && $('#5').text()==="O" && $('#3').text()==="O") || ($('#6').text()==="O" && $('#1').text()==="O" && $('#8').text()==="O") || ($('#2').text()==="O" && $('#5').text()==="O" && $('#8').text()==="O") ||( $('#6').text()==="O" && $('#5').text()==="O" && $('#4').text()==="O")){
+            $(".audio").trigger('play');
             alert("Hal 9000 is the winner!")
             return false
           }
           else{
+            $(".audio").trigger('play');
             alert("It is a tie!")
             return false
           }
@@ -104,7 +112,7 @@ $(document).ready(function(){
 
 
         else if(sum !==10 && sum <=15 && ($(idBlock).text() == "") ){
-            //console.log("sum is blah - idBlock is" + $(idBlock).attr("id"));
+            console.log("sum is blah - idBlock is" + $(idBlock).attr("id"));
             $(idBlock).append(player);
             elements.push(total-sum); 
             return false;
