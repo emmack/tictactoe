@@ -1,3 +1,21 @@
+#question1{
+	color: white;
+	font-family: "BEBAS NEUE";
+	font-size: 30px;
+}
+
+.answer{
+	color: white;
+	font-family: "BEBAS NEUE";
+	font-size: 30px;
+}
+
+
+#name{
+	color: white;
+	font-family: "BEBAS NEUE";
+	font-size: 30px;
+}
 body {
 	background-color: #0e0e15;
 }
@@ -56,7 +74,7 @@ text-align: center;
 font-size: 25px;
 color: white;
 position: absolute;
-top: 156px;
+top: 165px;
 left: 306px;
 }
 
