@@ -50,8 +50,8 @@ $(document).ready(function(){
   var total = 15;
   var Id = 0;
   var count = 0;
-  var elementIds = [];
-  var elementsComp = [];
+  var elementsX = [];
+  var elementsO = [];
   var elements = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   var cell = function(row, col){
     return $('tr:eq(' + row + ') td:eq(' + col + ')');
@@ -64,41 +64,63 @@ $(document).ready(function(){
      
     if(count === 1){
       Id = id;
-      elementIds.push(Id);
+      elementsX.push(Id);
       player = 'O';
         if (id !== 5){
           $('#5').append(player);
-          elementIds.push(5);
+          elementsO.push(5);
         }
         else{
           $('#2').append(player);
-          elementIds.push(2); 
+          elementsO.push(2); 
         }
     }
     else { 
 
       player = 'O';
       Id = id;
-      elementIds.push(Id);
-      console.log(elementIds);
-      $.each(elementIds, function(index){
+      elementsX.push(Id);
+      console.log(elementsX);
+      $.each(elementsX, function(index){
         var sum = (Id + this);
-        var diff = $(elements).not(elementIds).get();
-        console.log(diff);
+        var totalElements = elementsX.concat(elementsO)
+        var diff = $(elements).not(totalElements).get();
+        console.log('DIFF', diff);
         var rand = diff[Math.floor(Math.random() * diff.length)];
-        console.log(rand);
+        console.log('RANDOM', rand);
         var idBlock = document.getElementById(total-sum);
         var idBlockEmpty = document.getElementById(rand);
         if (sum !==10 && sum <=15 && $('idBlock:empty') ){
             $(idBlock).append(player);
-            elementIds.push(idBlock); 
+            elementsO.push(total-sum); 
               return false;
+
         }
         else{
            $(idBlockEmpty).append(player);
-           elementIds.push(idBlockEmpty);
+           console.log("ID BLOCK EMPTY", rand);
+           elementsO.push(rand);
             return false;
+
+             
         }
+        // else{
+        //   var totalX = elementsX.reduce(function(a, b) {
+        //       return a + b;
+        //     });
+        //     var totalO = elementsO.reduce(function(a, b) {
+        //       return a + b;
+        //     });
+        //   if(totalX === 15){
+        //     alert("X is the winner!")
+        //   }
+        //   else if(totalO === 15){
+        //     alert("Hal 9000 is the winner!")
+        //   }
+        //   else{
+        //     alert("It was a tie")
+        //   }
+        // }
       });
     }
   }
