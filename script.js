@@ -80,23 +80,41 @@ $(document).ready(function(){
         var sum = (Id + this);
         console.log("total used: " + elements)
         var diff = $(totalElements).not(elements).get();
-         console.log("empty: " + diff)
+        console.log("empty: " + diff)
         var rand = diff[Math.floor(Math.random() * diff.length)];
         console.log("random empty: " + rand)
         var idBlock = document.getElementById(total-sum);
         var idBlockEmpty = document.getElementById(rand);
+        
+        if(rand === undefined){
+          console.log("rand is undefined");
+          if(($('#2').text()==="X" && $('#7').text()==="X" && $('#6').text()==="X") || ($('#9').text()==="X" && $('#5').text()==="X" && $('#1').text()==="X") ||( $('#4').text()==="X" && $('#3').text()==="X" && $('#8').text()==="X") || ($('#2').text()==="X" && $('#9').text()==="X" && $('#4').text()==="X") || (($('#7').text()==="X" && $('#5').text()==="X" && $('#3').text()==="X") )|| ($('#6').text()==="X" && $('#1').text()==="X" && $('#8').text()==="X") || ($('#2').text()==="X" && $('#5').text()==="X" && $('#8').text()==="X") || ($('#6').text()==="X" && $('#5').text()==="X" && $('#4').text()==="X")){
+            alert("X is the winner!")
+            return false
+          }
+          else if(($('#2').text()==="O" && $('#7').text()==="O" && $('#6').text()==="O") || ($('#9').text()==="O" && $('#5').text()==="O" && $('#1').text()==="O") || ($('#4').text()==="O" && $('#3').text()==="O" && $('#8').text()==="O") ||( $('#2').text()==="O" && $('#9').text()==="O" && $('#4').text()==="O") || ($('#7').text()==="O" && $('#5').text()==="O" && $('#3').text()==="O") || ($('#6').text()==="O" && $('#1').text()==="O" && $('#8').text()==="O") || ($('#2').text()==="O" && $('#5').text()==="O" && $('#8').text()==="O") ||( $('#6').text()==="O" && $('#5').text()==="O" && $('#4').text()==="O")){
+            alert("Hal 9000 is the winner!")
+            return false
+          }
+          else{
+            alert("It is a tie!")
+            return false
+          }
+        }
 
 
-        if (sum !==10 && sum <=15 && $('idBlock:empty') ){
+        else if(sum !==10 && sum <=15 && ($(idBlock).text() == "") ){
+            //console.log("sum is blah - idBlock is" + $(idBlock).attr("id"));
             $(idBlock).append(player);
             elements.push(total-sum); 
             return false;
 
         }
-        else {
+        else{
+          console.log(idBlockEmpty)
            $(idBlockEmpty).append(player);
            elements.push(rand);
-            return false; 
+          return false; 
             
         }
       });
@@ -113,6 +131,7 @@ $(document).ready(function(){
 
 
 });
+
 
 
 
